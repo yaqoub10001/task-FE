@@ -1,0 +1,106 @@
+/* components/Navbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+  
+  .navLinks {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navLinks li {
+    margin-right: 1.5rem;
+  }
+  
+  .navLinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  .right input{
+    width: 100%;
+    border: 1px solid #000;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .searchBar {
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
+  
+  .showSearch {
+    display: block;
+  }
+  
+  .searchButton,
+  .menuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .navLinks {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 3.5rem;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 1rem 0;
+    }
+  
+    .showMenu {
+      display: flex;
+    }
+  
+    .searchBar {
+      display: none;
+    }
+  
+    .showSearch {
+      display: block;
+      position: absolute;
+      top: 3.5rem;
+      right: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 1rem;
+    }
+  
+    .searchButton,
+    .menuButton {
+      display: block;
+    }
+  }
+  

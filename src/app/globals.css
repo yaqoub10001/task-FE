@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  padding: 0;
+  margin: 0;
+  background-color: #17141d;
+  color: #fff;
+  font-family: "DM Mono", monospace;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.card-list {
+  display: flex;
+  padding: 3rem;
+  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 430px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.2s;
+}
+
+.card-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background-color: #17141d;
+  border-radius: 9px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.card-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-1rem);
+}
+.card:hover ~ .card {
+  transform: translateX(130px);
+}
+.card:not(:first-child) {
+  margin-left: -130px;
+}
+.card header{
+  min-height: 300px;
+}
+
+.card-header h2:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heading{
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+pre {
+  background-color: '#2d2d2d';
+  color: '#f8f8f2';
+  padding: '16px';
+  border-radius: '4px';
+  overflow-x: 'auto';
+  font-family: 'monospace';
+  line-height: '1.5';
+}
+code {
+  display: 'block';
+  white-space: 'pre';
+}
+::selection {
+  background-color: '#44475a';
+}
